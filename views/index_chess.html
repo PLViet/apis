@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess API Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #35424a;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .chess-board {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+            justify-content: center;
+        }
+        .square {
+            width: 80px;
+            height: 80px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        .square.black {
+            background-color: #333;
+            color: white;
+        }
+        .btn-container {
+            margin-top: 2rem;
+        }
+        .btn {
+            padding: 1rem 2rem;
+            background-color: #35424a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #29373d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Chess API On Message</h1>
+        <p>Welcome to the Chess API! Explore the world of chess.</p>
+    </header>
+    <div class="container">
+        <h2>Chess Board</h2>
+        <div class="chess-board">
+            <!-- Create the chess board here -->
+        </div>
+        <div class="btn-container">
+            <a href="/chess/docs" class="btn">API Documentation</a>
+        </div>
+    </div>
+</body>
+</html>

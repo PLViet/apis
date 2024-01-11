@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Profile Card</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/cover/">
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+			integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="stylesheet" href="../css/info.css" />
+	</head>
+ 
+	<body class>
+	<div class="toggle toggle__theme" id="lott">
+        <i class="fas fa-moon"></i>
+      </div>
+		<div class="card">
+			<div class="card__img">
+				<img src="/upload/db8gcstbmzk.jpg" alt="" />
+			</div>
+			<h2>Phạm Lê Xuân Trường</h2>
+			<p>Fullstack Developer</p>
+			<div class="card__social">
+				<a target="_black" href="https://www.facebook.com/100000272507589">
+					<i class="fab fa-facebook-f"></i>
+				</a>
+				<a target="_black" href="https://youtube.com/channel/UCLdgO3FPf3Yo1YD6nvjefMg">
+					<i class="fab fa-youtube"></i>
+				</a>
+				<a target="_black" href="https://www.tiktok.com/@xtruongdev">
+					<i class="fab fa-tiktok"></i>
+				</a>
+				<a target="_black" href="https://github.com/PLViet">
+					<i class="fab fa-github"></i>
+				</a>
+			</div>
+      <button><a href="/" style="color: white;text-decoration: none;" >
+			Back home</a></button>
+		</div>
+		<script>
+		const toggle = document.querySelector(".toggle__theme");
+//const card = document.querySelector(".app");
+toggle.addEventListener("click", () => {
+    let theme = toggle.querySelector(".fas");
+    if (theme.classList.contains("fa-moon")) {
+        theme.classList.remove("fa-moon");
+        theme.classList.add("fa-sun");
+        document.body.classList.toggle('dark');
+    } else {
+
+        theme.classList.remove("fa-sun");
+        theme.classList.add("fa-moon");
+        document.body.classList.toggle('dark');
+
+    }
+})
+		</script>
+	</body>
+</html>

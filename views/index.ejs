@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== BOXICONS ===============-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+      <link rel="stylesheet" href="/css/index.css">
+        <!--=============== CSS ===============
+        <link rel="stylesheet" href="assets/css/styles.css">-->
+
+        <title>Dashboard</title>
+      
+    </head>
+<body >
+        <!--=============== HEADER ===============-->
+        <header class="header" id="header">
+        <div class="toggle toggle__theme" id="lott">
+        <i id="fed tolet" class="fas fa-moon"></i> 
+      </div>
+          <form action="/search" method="POST" class="search">
+            <input type="text" name="name" placeholder="Search.." class="search_input">
+          <button type="submit" class="button"> 
+          <i class='bx bx-search'></i>
+          </button>
+          </input>
+          </form>
+            <nav class="nav container">
+              <div class="wei">
+                <a href="/home" class="nav__logo">PLXT</a> </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+      <!--            Profile Card               -->
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">
+                                <i class='bx bx-home-alt nav__icon'></i>
+                                <span class="nav__name">Profile Card</span>
+                            </a>
+                        </li>
+     <!--             About                  -->
+                    <li class="nav__item">
+                            <a href="#about" class="nav__link">
+                                <i class='bx bx-book-alt nav__icon'></i>
+                                <span class="nav__name">About</span>
+                            </a>
+                        </li>
+                      <!-- Contactme   -->
+<li class="nav__item">
+                            <a href="/api/docs" class="nav__link">
+                                <i class="fas fa-code nav__icon"></i>
+                                <span class="nav__name">Api</span>
+                            </a>
+                        </li>
+                 <!-- user profile   -->
+                        <li class="nav__item">
+                            <a href="/user" class="nav__link">  
+                                <i class='bx bx-user nav__icon'></i>
+                                <p href="/user" class="nav__name">User profile</p>
+                            </a>
+                        </li>
+
+             <!-- logout   -->         
+                        <li class="nav__item">
+                            <a href="/logout" class="nav__link">
+                              <i class='bx bx-log-out nav__icon'></i>
+                                <p class="nav__name">Logout</p>
+                            </a>
+                        </li>      
+          </ul>
+                </div>
+
+                <img src="/avt" alt="" class="nav__img">
+            </nav>
+        </header>
+
+        <main>
+            <!--=============== HOME ===============-->
+            <section class="container section section__height" id="home">
+                <h2 class="section__title show-on-scroll " >Profile Card</h2>
+                <div class="card" id="card" style="background-color: #dedede; border-radius: 10px; margin: 20px auto; height: 450px; width: 450px; overflow: hidden;">
+          <div id="back-img" class="info-to-home show-on-scroll">
+        <img  src="/avt"> </img>
+          </div>
+          <h2 class="hidden show-on-scroll" id="hidden"><%= name %></h2>
+          <p class="hidden show-on-scroll" id="hidden" ><%= bio %></p>
+          
+        </div>
+            </section>
+
+            <!--=============== ABOUT ===============-->
+            <section class="container section section__height" id="about">
+              <h2 class="section__title show-on-scroll ">About</h2>
+              <div class="reveal"> 
+                
+            <div class="card " id="card" style="background-color: #dedede; border-radius: 10px; margin: 20px auto; height: 450px; width: 450px;"></div>
+              </div>
+            </section>
+
+            <!--=============== SKILLS ===============
+            <section class="container section section__height" id="skills">
+                <h2 class="section__title show-on-scroll ">Skills</h2>
+            </section>
+
+            <!--=============== PORTFOLIO ===============
+            <section class="container section section__height" id="portfolio">
+                <h2 class="section__title show-on-scroll ">Portfolio</h2>
+            </section>
+
+            <!--=============== CONTACTME ===============-->
+            <section class="container section section__height" id="contactme">
+                <h2 class="section__title show-on-scroll ">Contactme</h2>
+            </section>
+        </main>
+        
+
+        <!--=============== MAIN JS ===============-->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script> 
+wow = new WOW(
+   {
+    boxClass:     'wow',      // default
+    animateClass: 'animated', // change this if you are not using animate.css
+    offset:       0,          // default
+    mobile:       true,       // keep it on mobile
+    live:         true        // track if element updates
+   }
+  )
+   wow.init();
+</script>
+      <script> 
+let elToShow = document.querySelectorAll('.show-on-scroll')
+
+let isElInViewPort = (el) => {
+    let rect = el.getBoundingClientRect()
+    // some browsers support innerHeight, others support documentElement.clientHeight
+    let viewHeight = window.innerHeight || document.documentElement.clientHeight
+
+    return (
+        (rect.top <= 0 && rect.bottom >= 0) ||
+        (rect.bottom >= viewHeight && rect.top <= viewHeight) ||
+        (rect.top >= 0 && rect.bottom <= viewHeight)
+    )
+}
+
+function loop() {
+    elToShow.forEach((item) => {
+        if (isElInViewPort(item)) {
+            item.classList.add('start')
+        } else {
+            item.classList.remove('start')
+        }
+    })
+}
+
+window.onscroll = loop
+
+loop()
+</script>
+<script> 
+/*window.addEventListener('scroll', reveal);
+function reveal(){
+    var reveals = document.querySelectorAll('.reveal');
+    for(var i =0; i< reveals.length; i++){
+        var windowheight = window.innerHeight;
+        var revealtop = reveals[i].getBoundingClientRect().top;
+        var revealpoint = 150;
+console.log(revealtop) 
+  console.log("height: " + windowheight )  
+        if(revealtop < windowheight - revealpoint){
+            reveals[i].classList.add('active');
+        } else {
+            reveals[i].classList.remove('active');
+        }
+    }
+}*/
+</script>
+      
+        <script>
+        const toggle = document.querySelector(".toggle__theme");
+//const card = document.querySelector(".app");
+toggle.addEventListener("click", () => {
+    let theme = toggle.querySelector(".fas");
+    if (theme.classList.contains("fa-moon")) {
+        theme.classList.remove("fa-moon");
+        theme.classList.add("fa-sun");
+        document.body.classList.toggle('dark');
+    } else {
+
+        theme.classList.remove("fa-sun");
+        theme.classList.add("fa-moon");
+        document.body.classList.toggle('dark');
+
+    }
+})
+        </script>
+        <script>
+        /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+const sections = document.querySelectorAll('section[id]')
+var reveals = document.querySelectorAll('.reveal');
+function scrollActive(){
+    const scrollY = window.pageYOffset
+
+    sections.forEach(current =>{
+        const sectionHeight = current.offsetHeight,
+            sectionTop = current.offsetTop - 50,
+            sectionId = current.getAttribute('id')
+
+          if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+          document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
+        }else{
+         document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
+        }
+
+    })
+}
+window.addEventListener('scroll', scrollActive)
+
+
+/*=============== CHANGE BACKGROUND HEADER ===============*/
+function scrollHeader(){
+    const header = document.getElementById('header')
+    // When the scroll is greater than 80 viewport height, add the scroll-header class to the header tag
+    if(this.scrollY >= 80) header.classList.add('scroll-header'); else header.classList.remove('scroll-header')
+}
+window.addEventListener('scroll', scrollHeader)
+        </script>
+    </body>
+</html>

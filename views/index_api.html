@@ -1,0 +1,521 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>APIs</title>
+	<!-- ==== CSS Files ==== -->
+	<link rel="stylesheet" href="/css/style-api.css">
+<!-- 	<link rel="stylesheet" href="/css/color-1.css">
+  <link rel="stylesheet" href="/css/color-1.css" class="alternate-style" title="color-1" disabled>
+  <link rel="stylesheet" href="/css/color-2.css" class="alternate-style" title="color-2" disabled>
+  <link rel="stylesheet" href="/css/color-3.css" class="alternate-style" title="color-3" >
+  <link rel="stylesheet" href="/css/color-4.css" class="alternate-style" title="color-4" disabled>
+  <link rel="stylesheet" href="/css/color-5.css" class="alternate-style" title="color-5" disabled> -->
+  <link rel="stylesheet" href="/css/style-switcher.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link
+    rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+<body>
+<!-- ===== Main Container Start ===== -->
+<div class="main-container">
+    <!-- ===== Aside Start ===== -->
+    <div class="aside">
+        <div class="logo">
+            <a href="#"><span>A</span>PIs</a>
+        </div> 
+        <div class="nav-toggler">
+            <span></span>
+        </div>
+        <ul class="nav">
+            <li><a href="#home" class="active"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="#facebook"><i class="fab fa-facebook"></i> Facebook</a></li>
+            <li><a href="#youtube"><i class="fab fa-youtube"></i> Youtube</a></li>
+            <li><a href="#tiktok"><i class="fab fa-tiktok"></i> Tiktok</a></li>
+            <li><a href="#instagram"><i class="fab fa-instagram-square"></i> Instagram</a></li>
+            <li><a href="#other"><i class="fas fa-th-list"></i> other</a></li>
+            <li><a href="#contact"><i class="fa fa-comments"></i> Contact</a></li>
+        </ul>
+    </div>
+    <!-- ===== Aside End ===== -->
+    <!-- ===== Main Content Start ===== -->
+    <div class="main-content">
+        <!-- ===== Home Section Start -->
+        <section class="home active section" id="home">
+            <div class="container">
+                <div class="row">
+                    <div class="home-info padd-15">
+                        <h3 class="hello">Hello, my name is <span class="name">Pham Le Xuan Truong</span></h3>
+                        <h3 class="my-profession">I' m a <span class="typing">Web Deverloper</span></h3>
+                        <p>I'm a web deverloper with extensive experience for over 1 year.My expertise is to create and website design, graphic design, and many more...</p>
+                        <a href="#contact" data-section-index="1" class="btn hire-me">contact me</a>
+                    </div>
+                    <div class="home-image padd-15">
+                        <img src="/image/logo.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ===== Home Section End -->
+        <!-- ===== facebook Section Start -->
+        <section class="API section" id="facebook">
+            <div class="container">
+                <div class="row">
+                    <div class="section-title padd-15">
+                        <h2>Facebook API</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="API-content padd-15">
+                        <div class="row">
+                            <section>
+                                <!--for demo wrap-->
+                                <div class="tbl-header">
+                                  <table cellpadding="0" cellspacing="0" border="0">
+                                    <thead>
+                                      <tr>
+<!--                                         <th>Features</th> -->
+                                        <th>Method</th>
+                                        <th>Description</th>
+                                        <th>Params / Qery</th>
+<!--                                         <th class="text-center">Status</th> -->
+                                        <th class="text-center">Url</th>
+                                      </tr>
+                                    </thead>
+                                  </table>
+                                </div>
+                                <div class="tbl-content">
+                                  <table cellpadding="0" cellspacing="0" border="0">
+                                    <tbody>
+                                      <tr>
+<!--                                         <td>Facebook info</td> -->
+                                        <td>GET</td>
+                                        <td>Info user facebook</td>
+                                        <td>uid</td>
+<!--                                         <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info" style="color: #1978a2;">active</span>
+                                        </td> -->
+                                        <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/facebook/info?uid=4" target="_blank">Go</a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+<!--                                         <td>Fb download video</td> -->
+                                        <td>GET</td>
+                                        <td>download video facebook</td>
+                                        <td>url</td>
+<!--                                         <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info" style="color: #1978a2;">active</span> 
+                                        </td>-->
+                                        <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/facebook/download?url=https://fb.watch/hodn_31iZB/" target="_blank">Go</a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+<!--                                         <td>Facebook uid</td> -->
+                                        <td>GET</td>
+                                        <td>Lấy id facebook</td>
+                                        <td>Lấy id facebook</td>
+<!--                                         <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info" style="color: #1978a2;">active</span> 
+                                        </td>-->
+                                        <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/facebook/getid?link=https://www.facebook.com/PLXT.developer" target="_blank">Go</a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+<!--                                         <td>Facebook time create</td> -->
+                                        <td>GET</td>
+                                        <td>Check thời gian tạo facebook</td>
+                                        <td>id</td>
+<!--                                         <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info" style="color: #1978a2;">active</span> 
+                                        </td>-->
+                                        <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/facebook/time?id=4" target="_blank">Go</a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+<!--                                         <td>Facebook 2fa</td> -->
+                                        <td>POST</td>
+                                        <td>Lấy mã 2fa facebook</td>
+                                        <td>secret</td>
+<!--                                         <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info" style="color: #1978a2;">active</span> 
+                                        </td>-->
+                                        <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/facebook/2fa" target="_blank">Go</a>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </section>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ===== facebook Section End -->
+
+        <!-- ===== youtube Section Start -->
+        <section class="API section" id="youtube">
+          <div class="container">
+              <div class="row">
+                  <div class="section-title padd-15">
+                      <h2>Youtube API</h2>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="API-content padd-15">
+                      <div class="row">
+                          <section>
+                              <!--for demo wrap-->
+                              <div class="tbl-header">
+                                <table cellpadding="0" cellspacing="0" border="0">
+                                  <thead>
+                                    <tr>
+<!--                                       <th>Features</th> -->
+                                      <th>Method</th>
+                                      <th>Description</th>
+                                      <th>Params / Query</th>
+<!--                                       <th class="text-center">Status</th> -->
+                                      <th class="text-center">Url</th>
+                                    </tr>
+                                  </thead>
+                                </table>
+                              </div>
+                              <div class="tbl-content">
+                                <table cellpadding="0" cellspacing="0" border="0">
+                                  <tbody>
+                                    <tr>
+<!--                                       <td>Youtube search</td> -->
+                                      <td>GET</td>
+                                      <td>Youtube search</td>
+                                      <td>search</td>
+<!--                                       <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info" style="color: #1978a2;">active</span>
+                                      </td> -->
+                                      <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/youtube?search=%C4%90%E1%BB%99%20Mi%20Xi" target="_blank">Go</a>
+                                      </td>
+                                    </tr>
+                                    <tr>
+<!--                                       <td>Youtube download</td> -->
+                                      <td>GET</td>
+                                      <td>Tải video youtube</td>
+                                      <td>dlvideo</td>
+<!--                                       <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info" style="color: #1978a2;">active</span>
+                                      </td> -->
+                                      <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/youtube?dlvideo=https://www.youtube.com/watch?v=hMlzKfrcCHA" target="_blank">Go</a>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </section>
+                        </div>
+                  </div>
+              </div>
+          </div>
+      </section>  
+        <!-- ===== youtube Section End -->
+
+        <!-- ===== Tiktok Section Start -->
+        <section class="API section" id="tiktok">
+          <div class="container">
+              <div class="row">
+                  <div class="section-title padd-15">
+                      <h2>Tiktok API</h2>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="API-content padd-15">
+                      <div class="row">
+                          <section>
+                              <!--for demo wrap-->
+                              <div class="tbl-header">
+                                <table cellpadding="0" cellspacing="0" border="0">
+                                  <thead>
+                                    <tr>
+<!--                                       <th>Features</th> -->
+                                      <th>Method</th>
+                                      <th>Description</th>
+                                      <th>Params / Query</th>
+<!--                                       <th class="text-center">Status</th> -->
+                                      <th class="text-center">Url</th>
+                                    </tr>
+                                  </thead>
+                                </table>
+                              </div>
+                              <div class="tbl-content">
+                                <table cellpadding="0" cellspacing="0" border="0">
+                                  <tbody>
+                                    <tr>
+<!--                                       <td>Tiktok info</td> -->
+                                      <td>GET</td>
+                                      <td>Info user tiktok</td>
+                                      <td>username</td>
+<!--                                       <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info" style="color: #1978a2;">active</span>
+                                      </td> -->
+                                      <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/tiktok/info?username=xuantruong_developer" target="_blank">Go</a>
+                                      </td>
+                                    </tr>
+                                    <tr>
+<!--                                       <td>Tiktok video</td> -->
+                                      <td>GET</td>
+                                      <td>Tải video tiktok</td>
+                                      <td>url</td>
+<!--                                       <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info" style="color: #1978a2;">active</span>
+                                      </td> -->
+                                      <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/tiktok/video?url=https://www.tiktok.com/@aris29080/video/7105812797761670427" target="_blank">Go</a>
+                                      </td>
+                                    </tr>
+                                    <tr>
+<!--                                       <td>Tiktok search</td> -->
+                                      <td>GET</td>
+                                      <td>Tiktok search</td>
+                                      <td>keywork</td>
+<!--                                       <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info" style="color: #1978a2;">active</span> 
+                                      </td>-->
+                                      <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/tiktok/search?keywork=H%C6%A1n%20C%E1%BA%A3%20M%C3%A2y%20Tr%E1%BB%9Di" target="_blank">Go</a>
+                                      </td>
+                                    </tr>
+                                    <tr>
+<!--                                       <td>Tiktok search</td> -->
+                                      <td>GET</td>
+                                      <td>Tiktok get Post user</td>
+                                      <td>username</td>
+<!--                                       <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info" style="color: #1978a2;">active</span> 
+                                      </td>-->
+                                      <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/tiktok/post?username=xuantruong_developer" target="_blank">Go</a>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </section>
+                        </div>
+                  </div>
+              </div>
+          </div>
+      </section>  
+        <!-- ===== Tiktok Section End -->
+
+        <!-- ===== Instagram Section Start -->
+        <section class="API section" id="instagram">
+          <div class="container">
+              <div class="row">
+                  <div class="section-title padd-15">
+                      <h2>Instagram API</h2>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="API-content padd-15">
+                      <div class="row">
+                          <section>
+                              <!--for demo wrap-->
+                              <div class="tbl-header">
+                                <table cellpadding="0" cellspacing="0" border="0">
+                                  <thead>
+                                    <tr>
+<!--                                       <th>Features</th> -->
+                                      <th>Method</th>
+                                      <th>Description</th>
+                                      <th>Params / Query</th>
+<!--                                       <th class="text-center">Status</th> -->
+                                      <th class="text-center">Url</th>
+                                    </tr>
+                                  </thead>
+                                </table>
+                              </div>
+                              <div class="tbl-content">
+                                <table cellpadding="0" cellspacing="0" border="0">
+                                  <tbody>
+                                    <tr>
+<!--                                       <td>Instagram info</td> -->
+                                      <td>GET</td>
+                                      <td>Info user Instagram</td>
+                                      <td>username</td>
+<!--                                       <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info" style="color: #1978a2;">active</span>
+                                      </td> -->
+                                      <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/instagram/info?username=brasl_dvfb" target="_blank">Go</a>
+                                      </td>
+                                    </tr>
+                                    <tr>
+<!--                                       <td>Instagram video</td> -->
+                                      <td>GET</td>
+                                      <td>Download video Instagram</td>
+                                      <td>url</td>
+<!--                                       <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info" style="color: #1978a2;">active</span>
+                                      </td> -->
+                                      <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/instagram/videodl?url=https://www.instagram.com/reel/CmPS-BeOtyr/" target="_blank">Go</a>
+                                      </td>
+                                    </tr>
+                                    <tr>
+<!--                                       <td>Instagram audio</td> -->
+                                      <td>GET</td>
+                                      <td>Download audio Instagram</td>
+                                      <td>url</td>
+<!--                                       <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info" style="color: #1978a2;">active</span> -->
+                                      </td>
+                                      <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/instagram/audiodl?url=https://www.instagram.com/reel/CmPS-BeOtyr/" target="_blank">Go</a>
+                                      </td>
+                                    </tr>
+                                   <tr>
+<!--                                       <td>Instagram video</td> -->
+                                      <td>GET</td>
+                                      <td>Search Instagram</td>
+                                      <td>username</td>
+<!--                                       <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info" style="color: #1978a2;">active</span>
+                                      </td> -->
+                                      <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/instagram/search?username=xuantruong.dev" target="_blank">Go</a>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </section>
+                        </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+        <!-- ===== Instagram Section End -->
+
+        <!-- ===== Other Section Start -->
+        <section class="contact section" id="other">
+          <div class="container">
+            <div class="row">
+              <div class="section-title padd-15">
+                  <h2>Other API</h2>
+              </div>
+          </div>
+                <div class="row">
+            <div class="API-content padd-15">
+              <div class="row">
+                <section>
+                  <!--for demo wrap-->
+                  <div class="tbl-header">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                      <thead>
+                        <tr>
+<!--                           <th>Features</th> -->
+                          <th>Method</th>
+                          <th>Description</th>
+                          <th>Params / Query</th>
+<!--                           <th class="text-center">Status</th> -->
+                          <th class="text-center">Url</th>
+                        </tr>
+                      </thead>
+                    </table>
+                  </div>
+                  <div class="tbl-content">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                      <tbody>
+                        <tr>
+                          <td>GET</td>
+                          <td>Canvas fbcover</td>
+                          <td>name,id,subname</td>
+                         
+                          <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold"
+                              style="text-decoration: none;" href="/canvas/fbcover?name=Thiệu%20Trung%20Kiên&id=50&subname=TTK"
+                              target="_blank">Go</a>
+                          </td>
+                        </tr>
+                       
+                        <tr>
+                          <td>GET</td>
+                          <td>Canvas taoanhdep</td>
+                          <td>id,chu_nen,chu_ky,color</td>
+                         
+                          <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold"
+                              style="text-decoration: none;" href="/canvas/taoanhdep?id=5&chu_nen=Truong&chu_ky=37834&color=cyan"
+                              target="_blank">Go</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+         </div>
+        </section>
+        <!-- ===== Other Section End -->
+
+        
+        <!-- ===== Contact Section Start -->
+        <section class="contact section" id="contact">
+          <div class="container">
+            <div class="row">
+              <div class="section-title padd-15">
+                  <h2>Contact Me</h2>
+              </div>
+          </div>
+          <h3 class="contact-title padd-15">Have You Any Questions?</h3>
+          <h4 class="contact-sub-title padd-15">I'M AT YOUR SERVICES</h4>
+          <div class="row">
+            <!-- ===== Contact info item start ===== -->
+             <div class="contact-info-item padd-15">
+              <div class="icon"><i class="fa fa-phone"></i></div>
+              <h4>Call</h4>
+              <p>+84 397644468</p>
+             </div>
+             <div class="contact-info-item padd-15">
+              <div class="icon"><i class="fa fa-envelope"></i></div>
+              <h4>Email</h4>
+              <p>tp869252@gmail.com</p>
+             </div>
+             <div class="contact-info-item padd-15">
+              <div class="icon"><i class=" fa fab fa-facebook"></i></div>
+              <h4>Facebook</h4>
+              <p>https://fb.com/PLXT.developer</p>
+             </div>
+            <!-- ===== Contact info item end ===== -->
+          </div>
+          <h3 class="contact-title padd-15">SEND ME AN EMAIL</h3>
+          <h4 class="contact-sub-title padd-15">I'M VERY RESPOSIVE TO MESSAGES</h4>
+          <!-- ===== Contact form ===== -->
+          <!-- <div class="row">
+            <div class="contact-form padd-15">
+              <div class="row">
+                <div class="form-item col-6 padd-15">
+                   <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Name">
+                   </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+        </section>
+        <!-- ===== Contact Section End -->
+    </div>
+    <!-- ===== Main Content End ===== -->
+</div>
+<!-- ===== Main Container End ===== -->
+
+<!-- ===== Style Switcher ===== -->
+<div class="style-switcher">
+  <div class="style-switcher-toggler s-icon">
+    <i class="set fas fa-cog fa-skin"></i>
+  </div>
+  <div class="day-night s-icon">
+    <i class="fas "></i>
+  </div>
+  <h4>Theme Options Colors</h4>
+  <div class="colors">
+    <span class="color1 color" data-color="#ec1839"></span>
+    <span class="color2 color" data-color="#fa5b0f"></span>
+    <span class="color3 color" data-color="#37b182"></span>
+    <span class="color4 color" data-color="#1854b4"></span>
+    <span class="color5 color" data-color="#f021b2"></span>
+    <span class="color6 color" data-color="#00FFFF"></span>
+    <span class="color7 color" data-color="#FF6347"></span>
+    <span class="color8 color" data-color="#6699FF"></span>
+    <span class="color9 color" data-color="#FFFF00"></span>
+    <span class="color10 color" data-color="#FF0000"></span>
+  </div>
+</div>
+
+<!-- ===== JS Files ===== -->
+<script src="/js/typed.min.js" referrerpolicy="no-referrer"></script>
+<script src="/js/script.js"></script>
+<script src="/js/style-switcher.js"></script>
+</body>
+</html>

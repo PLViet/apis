@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Upcode</title>
+</head>
+<style>
+body{
+  background-color: #30363d;
+}
+  .text{
+    background-color: white;
+  }
+  .btn {
+    margin: 0 2px;
+    color: #c9d1d9;
+    background-color: #21262d;
+    border-color: rgba(240,246,252,0.1);
+    box-shadow: 0 0 transparent,0 0 transparent;
+    transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+    transition-property: color,background-color,box-shadow,border-color;
+    border-radius: 2px;
+}
+  a{
+    text-decoration: none;
+}
+  .btn-sm {
+    padding: 3px 12px;
+    font-size: 12px;
+    line-height: 20px;
+}
+</style>
+<body>
+<!-- <h5>link: <%= link %></h5> -->
+  <textarea class="text"  rows="35" cols="150" placeholder="<%= code %>" Disabled></textarea>
+  <div class="BtnGroup">
+        <a data-permalink-href="<%= link %>" href="<%= link %>" id="raw-url" data-view-component="true" class="js-permalink-replaceable-link btn-sm btn BtnGroup-item">    Raw
+ </a>          <a onclick="myFunction()" data-hotkey="b" data-view-component="true" class="js-update-url-with-hash js-permalink-replaceable-link btn-sm btn BtnGroup-item">    copy 
+</a>   
+  </div>
+  <input id='myInput' value='<%= link %>' Disabled> 
+
+</input>
+</body>
+<script>
+function myFunction() {
+  // Get the text field
+  var copyText = document.getElementById("myInput");
+
+  // Select the text field
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // For mobile devices
+
+  
+  // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.value);
+  
+  // Alert the copied text
+  alert("Copied the text: " + copyText.value);
+}
+</script>
+</html>

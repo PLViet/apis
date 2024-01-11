@@ -1,0 +1,182 @@
+
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-widtht, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.98.0">
+    <title>User Profile</title>
+<!-- Custom styles for this template -->
+    <link href="../css/cover.css" rel="stylesheet">
+  </head>
+  <body class="">
+   
+    <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
+
+                    
+                    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+                        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                            <i class="bx bx-menu bx-sm"></i>
+                        </a>
+                    </div>
+
+                    <div class="navbar-nav align-items-center">
+                        <a class="nav-link style-switcher-toggle hide-arrow" href="javascript:void(0);" data-bs-original-title="" title="">
+                            <i class="bx bx-sm bx-sun"></i>
+                        </a>
+                    </div>
+
+                    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                        <ul class="navbar-nav flex-row align-items-center ms-auto">
+                            
+                            <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                                    <div class="avatar avatar-online">
+                                        <img src="/avt" alt="" class="w-px-40 h-auto rounded-circle">
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 me-3">
+                                                    <div class="avatar avatar-online">
+                                                        <img src="/avt" alt="" class="w-px-40 h-auto rounded-circle">
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <span class="fw-semibold d-block"><%= name %></span>
+                                               </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="/home">
+                                            <i class="bx bx-user me-2"></i>
+                                            <span class="align-middle">Home</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="/logout" >
+                                            <i class="bx bx-power-off me-2"></i>
+                                            <span class="align-middle">Đăng xuất</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </nav>
+                
+   <!-- <form action="/logout?_method=DELETE" method="POST">
+                <button id= "" class="logout" type="submit"  >Logout</button>
+
+              </form>-->
+              <div class="card-body" id="card-bodys">
+<div class="w-full absolute bottom-0 left-0 z-10 transform translate-y-3/4 lg:w-auto lg:translate-x-1/2 flex justify-center">
+<div class="main-img-user">
+   
+<img alt="avatar" style="border-radius:50%;background: #dddddd; border-radius: 50%; border: 2px solid #a1a1a1; height: 200px; margin: 20px; padding: 3px; text-align: center; width: 200px;right: 30px;" id="image_user" class="rounded-circle" src="/avt">
+
+</div>
+<h5 class="bio_user"><%= bio %></h5>
+</div>
+</div>
+    <div class="content-wrapper">
+                    
+        <div class="bg-gray-100 pt-[120px] lg:pt-0 lg:pl-[240px] min-h-[120px]">
+          <div class="p-4 text-center lg:text-left">
+            <h4 class="font-mock text-2xl text-gray-700 fw-bold py-3 mb-4">Thông tin tài khoản</h4>
+            <div class="row">
+<div class="col-md-6">
+<div class="card mb-4">
+<div class="card-body">
+<div class="ribbon-title ribbon-primary">Thông tin tài khoản</div>
+<div class="mt-4">
+<div class="row">
+    <div class="font-mock text-gray-500 form-group col-md-6 mb-3">
+        <label class="form-label" for="">ID User</label>
+        <input type="text" class="form-control" value="<%= id %>" readonly>
+    </div>
+        <div class="font-mock text-gray-500 form-group col-md-6 mb-3">
+            <label class="form-label" for="">Họ và tên</label>
+            <input type="text" class="form-control" value="<%= name %>" readonly>
+        </div>
+        <div class="font-mock text-gray-500 form-group col-md-6 mb-3">
+            <label class="form-label" for="">Email</label>
+            <input type="text" class="form-control" value="<%= email %>" readonly>
+        </div>
+        <div class="font-mock text-gray-500 form-group col-md-6 mb-3">
+            <label class="form-label" for="">Thời gian tham gia</label>
+            <input type="text" class="form-control" value="<%= timejoin %>" readonly>
+        </div>
+        <div class="font-mock text-gray-500 form-group col-md-12">
+             <label class="form-label" for="">Role</label>
+        <div class="input-group">
+           <input class="form-control" type="text" value="<%= role %>" id="api_token" readonly="">
+        </div>
+            </div>
+            <div class="font-mock text-gray-500 form-group col-md-12">
+             <label class="form-label" for="">Change avatar</label>
+        <!-- UPLOAD SINGLE FILE -->
+    <div class="mb-3">
+        <form action="/upload" enctype="multipart/form-data" method="POST"> 
+           <!-- <label for="formFile" class="form-label">Change avatar</label>-->
+            <input class="form-control" type="file" id="formFile" name="formFile" >
+            <input type="submit" class="save_file" value="Save"/>
+        </form>
+    </div>
+            </div>
+    </div>
+</div>
+</div>
+</div>       
+</div>
+</div>
+</div>   
+</div>
+<div class="card-body">
+<div class="ribbon-title ribbon-primary">Đổi mật khẩu</div>
+<div class="mt-4">
+<form  action="/passwords" method="POST">
+        <div class="mb-3">
+            <label class="form-label" for="form3Example3">Mật khẩu cũ</label>
+            <input type="password" id="old_password" class="form-control" name="old_password" placeholder="Nhập mật khẩu cũ">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="form3Example3">Mật khẩu mới</label>
+            <input type="password" id="new_password" class="form-control" name="new_password" placeholder="Nhập mật khẩu mới">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="form3Example3">Mật khẩu mới</label>
+            <input type="password" id="confirm_new_password" class="form-control" name="confirm_new_password" placeholder="Nhập lại mật khẩu mới">
+        </div>
+        <div class="d-grid gap-2">
+            <button type="submit" id="post_data" class="btn btn-primary"><i class="fa fa-lock"></i> Thay
+                đổi</button>
+        </div>
+    </form>
+</div>
+</div>
+</div>
+<div class="mb-2 mb-md-0">
+                    ©
+                    <script>
+                      document.write(new Date().getFullYear());
+                    </script>
+                    , hệ thống được thiết kế và vận hành bởi
+                    <a href="https://www.facebook.com/100000272507589" target="_blank" rel="noopener noreferrer">Phạm Lê Xuân Trường</a>
+                  </div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>
+  

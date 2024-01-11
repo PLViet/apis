@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>APIs</title>
+  <link rel="stylesheet" href="../css/api.css">
+</head>
+<body>
+    <div class="modal-content border-0">
+<!--         <div class="position-absolute top-0 end-0 mt-3 me-3 z-index-1">
+            <button class="btn navbar-toggler-humburger-icon navbar-toggler me-1 me-sm-3 collapsed cuss" type="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalCollapse" aria-controls="navbarVerticalCollapse" aria-expanded="false" aria-label="Chuyển đổi điều hướng thành">
+              <div id='menuu' class="menuu customizer border-left-blue-grey border-left-lighten-4 d-none d-xl-block ">
+               <a class="customizer-close" href="#">
+                 <i class="fas fa-times"></i>
+                 </a>
+   </div>
+              <span class="navbar-toggle-icon"><span class="toggle-line"></span></span>
+            </button>
+                      <button class="btn-close btn btn-sm btn-circle d-flex flex-center transition-base" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div> -->
+        <div class="modal-body p-0">
+            <div class="bg-light rounded-top-lg py-3 ps-4 pe-6">
+                <h4 class="mb-1" id="Convert">List of APIs</h4>
+                <p class="fs--2 mb-0">Added by <a class="link-600 fw-semi-bold" href="https://facebook.com/Developed.PLXT" target="_blank">Phạm Lê Xuân Trường</a>
+                </p>
+            </div>
+            <div class="col-12">
+                <div class="table-responsive scrollbar">
+                    <table class="table table-hover text-700 overflow-hidden h6">
+                        <thead class="bg-200 text-900">
+                            <tr class="text-uppercase">
+                                <th>Features</th>
+                                <th>Method</th>
+                                <th>Description</th>
+                                <th>Params / Query</th>
+                                <th class="text-center">Status</th>
+                                <th class="text-center">Url</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Facebook info</td>
+                                <td>GET</td>
+                                <td>Info user facebook</td>
+                                <td>uid</td>
+                                <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info">active</span>
+                                </td>
+                                <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/facebook/info?uid=100000272507589" target="_blank">Go</a>
+                                </td>
+                            </tr>
+                       <tr>
+                                <td>Fb download video</td>
+                                <td>GET</td>
+                                <td>download video facebook</td>
+                                <td>url</td>
+                                <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info">active</span>
+                                </td>
+                                <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/facebook/download?url=https://fb.watch/hodn_31iZB/" target="_blank">Go</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Facebook uid</td>
+                                <td>GET</td>
+                                <td>Lấy id facebook</td>
+                                <td>link</td>
+                                <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info">active</span>
+                                </td>
+                                <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/facebook/getid?link=https://facebook.com/Developed.PLXT" target="_blank">Go</a>
+                                </td>
+                            </tr>
+                          <tr>
+                                <td>Facebook 2fa</td>
+                                <td>POST</td>
+                                <td>Lấy mã 2fa facebook</td>
+                                <td>secret</td>
+                                <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info">active</span>
+                                </td>
+                                <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/facebook/2fa" target="_blank">Go</a>
+                                </td>
+                          </tr>
+                            <tr>
+                                <td>Facebook time create</td>
+                                <td>GET</td>
+                                <td>Check thời gian tạo facebook</td>
+                                <td>id</td>
+                                <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info">active</span>
+                                </td>
+                                <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/facebook/time?id=100000272507589" target="_blank">Go</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tiktok info</td>
+                                <td>GET</td>
+                                <td>Info user tiktok</td>
+                                <td>username</td>
+                                <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info">active</span>
+                                </td>
+                                <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/tiktok/info?username=xuantruong_sad" target="_blank">Go</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tiktok video</td>
+                                <td>GET</td>
+                                <td>Tải video tiktok</td>
+                                <td>url</td>
+                                <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info">active</span>
+                                </td>
+                                <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/tiktok/video?url=https://www.tiktok.com/@aris29080/video/7105812797761670427?is_copy_url=1&amp;is_from_webapp=v1&amp;q=lofi&amp;t=1657523268368" target="_blank">Go</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tiktok search</td>
+                                <td>GET</td>
+                                <td>Tiktok search</td>
+                                <td>keywork</td>
+                                <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info">active</span>
+                                </td>
+                                <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/tiktok/search?keywork=Hơn%20Cả%20Mây%20Trời" target="_blank">Go</a>
+                                </td>
+                            </tr>
+                          <tr>
+                                <td>Instagram info</td>
+                                <td>GET</td>
+                                <td>Info user Instagram</td>
+                                <td>username</td>
+                                <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info">active</span>
+                                </td>
+                                <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/instagram/info?username=brasl_dvfb" target="_blank">Go</a>
+                                </td>
+                            </tr>
+                          <tr>
+                                <td>Instagram video</td>
+                                <td>GET</td>
+                                <td>Download video Instagram</td>
+                                <td>url</td>
+                                <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info">active</span>
+                                </td>
+                                <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/instagram/videodl?url=https://www.instagram.com/reel/CmPS-BeOtyr/?utm_source=ig_web_copy_link" target="_blank">Go</a>
+                                </td>
+                            </tr>
+                          <tr>
+                                <td>Instagram audio</td>
+                                <td>GET</td>
+                                <td>Download audio Instagram</td>
+                                <td>url</td>
+                                <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info">active</span>
+                                </td>
+                                <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/instagram/audiodl?url=https://www.instagram.com/reel/CmPS-BeOtyr/?utm_source=ig_web_copy_link" target="_blank">Go</a>
+                                </td>
+                            </tr>
+   <tr>
+                                <td>Youtube search</td>
+                                <td>GET</td>
+                                <td>Youtube search</td>
+                                <td>search</td>
+                                <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info">active</span>
+                                </td>
+                                <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/youtube?search=Độ%20Mi%20Xi" target="_blank">Go</a>
+                                </td>
+                            </tr>
+                           <tr>
+                                <td>Youtube download</td>
+                                <td>GET</td>
+                                <td>Tải video youtube</td>
+                                <td>dlvideo</td>
+                                <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info">active</span>
+                                </td>
+                                <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/youtube?dlvideo=https://www.youtube.com/watch?v=hMlzKfrcCHA" target="_blank">Go</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Create notes</td>
+                                <td>POST</td>
+                                <td>Tạo ghi chú</td>
+                                <td>code</td>
+                                <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info">active</span>
+                                </td>
+                                <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/upcode" target="_blank">Go</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Upload images</td>
+                                <td>POST</td>
+                                <td>Lưu ảnh trên api</td>
+                                <td>url</td>
+                                <td><span class="badge badge rounded-pill d-block p-2 badge-soft-info">active</span>
+                                </td>
+                                <td class="text-center"><a class="badge rounded-pill d-block p-2 bg-info bold" style="text-decoration: none;" href="/uploads" target="_blank">Go</a>
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+  <script>
+    const name = document.querySelector("#menuu");
+const btn = document.querySelector(".cuss");
+
+      btn.addEventListener("click", function () {
+	  if (name.classList.contains("open")) {
+        name.classList.remove("open");
+		} else {
+		name.classList.add("open");
+		}
+ });
+    </script>
+  <script>
+    function myFunction() {
+        // Get the text field
+        var copyText = document.getElementById("myInput");
+
+        // Select the text field
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); // For mobile devices
+
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(copyText.value);
+
+        // Alert the copied text
+        alert("Copied the text: " + copyText.value);
+    }
+</script>
+
+</html>
