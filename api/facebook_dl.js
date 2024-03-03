@@ -1,24 +1,26 @@
 const { join } = require('path')
 const fs = require('fs')
 var axios = require("axios");
-var datas = {
-  'authority': 'www.facebook.com',
-  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36',
-  'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-  'accept-language': 'vi,fr-FR;q=0.9,fr;q=0.8,en-US;q=0.7,en;q=0.6',
-  'sec-ch-ua': '"Not?A_Brand";v="8", "Chromium";v="108", "Google Chrome";v="108"',
+let datas = {
+  accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+  'accept-language': 'vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5',
   'cache-control': 'max-age=0',
-  'accept-encoding': 'gzip, deflate, br',
+  dpr: '1.1041666269302368',
+  'sec-ch-prefers-color-scheme': 'light',
+  'sec-ch-ua': '"Chromium";v="122", "Not(A:Brand";v="24", "Google Chrome";v="122"',
+  'sec-ch-ua-full-version-list': '"Chromium";v="122.0.6261.69", "Not(A:Brand";v="24.0.0.0", "Google Chrome";v="122.0.6261.69"',
   'sec-ch-ua-mobile': '?0',
-  'sec-ch-ua-platform': "Windows",
+  'sec-ch-ua-model': '""',
+  'sec-ch-ua-platform': '"Windows"',
+  'sec-ch-ua-platform-version': '"15.0.0"',
   'sec-fetch-dest': 'document',
   'sec-fetch-mode': 'navigate',
   'sec-fetch-site': 'same-origin',
   'sec-fetch-user': '?1',
   'upgrade-insecure-requests': '1',
-  'Cookie': 'sb=NLUhY4A_BWx6Me6QPqwXOIXo;m_pixel_ratio=1;x-referer=eyJyIjoiLyIsImgiOiIvIiwicyI6Im0ifQ%3D%3D;c_user=523169144;datr=TtXIZMwtxZoBOIFEQPaqQtjh;locale=vi_VN;fbl_cs=AhBkBOuhZQ1VLtr%2F4Qx3UDnDGEZHM0FUSEUxY0lCTHBEQTFzL0I3NVg3Sw;fbl_ci=1779557455806135;fbl_st=101434738%3BT%3A28194602;wl_cbv=v2%3Bclient_version%3A2303%3Btimestamp%3A1691676212;m_page_voice=523169144;wd=1322x661;dpr=1;usida=eyJ2ZXIiOjEsImlkIjoiQXJ6OWhocGd4MmF2eiIsInRpbWUiOjE2OTE4MTU5MjB9;xs=44%3A8zLlSlDB3WJOCA%3A2%3A1690883402%3A-1%3A6276%3A%3AAcUO6Jo-74LTso3sZbbp4uweck-Htk8ygqS_wZQolw;fr=0VrTJGThTFCkYabvT.AWXCmo8MwgatT46kx9uK5P4tq-Q.Bk2_Yd.2m.AAA.0.0.Bk2_Yd.AWVNIsRRD0A;presence=C%7B%22t3%22%3A%5B%5D%2C%22utc3%22%3A1692136924432%2C%22v%22%3A1%7D;',
-
-};
+  'viewport-width': '1238',
+  cookie: 'ps_n=0; sb=kpDTZdFudkyio-GdobDu3de-; datr=kpDTZe009BxJd-9MiU1hDITT; c_user=100078830621307; dpr=1.1041666269302368; xs=38%3AyWKfAKEqx5Ov2A%3A2%3A1708363970%3A-1%3A6746%3A%3AAcWLcLog9VjmQsNSDD6MabOZ7n6IkgxEJQCaBP4nBEE; fr=1emSiaYMV9NSsZTFm.AWU_M5jpf7lnXgtJeCUEDBWvf8E.Bl30Vt.yZ.AAA.0.0.Bl30Vt.AWUH9VoUBMg; presence=C%7B%22t3%22%3A%5B%5D%2C%22utc3%22%3A1709131660168%2C%22v%22%3A1%7D; wd=1238x953'
+}
 
 var cookie = "sb=aGjpYw7xokoIDgWExf9eje9r;dpr=2.75;locale=vi_VN;datr=yeocZLJFMSRq6sts6Pb5p9Mi;wd=980x1953;c_user=100086063221253;xs=15%3AGQmU80H-wocakw%3A2%3A1679616852%3A-1%3A8520;fr=0F2ZxKyjsomSeI9Jp.AWUulu-evgFRH6UtI_rqgCJki40.BkHFuu.Hl.AAA.0.0.BkHOuk.AWV_wlmTQQg;"
 const facebookStoryDL = async function(url) {
@@ -41,9 +43,9 @@ const facebookStoryDL = async function(url) {
       //resolve(list_video[0].node.attachments[0].media)
       for (const dataV of list_video) {
         var cmt_count = dataV.node.feedback != null ? dataV.node.feedback.story_comment_count : 'comment off'
-        var hd = dataV.node.attachments[0].media.playable_url_quality_hd
-        if (dataV.node.attachments[0].media.playable_url_quality_hd === null) {
-          hd = dataV.node.attachments[0].media.playable_url
+        var hd = dataV.node.attachments[0].media.browser_native_hd_url
+        if (dataV.node.attachments[0].media.browser_native_hd_url === null) {
+          hd = dataV.node.attachments[0].media.browser_native_sd_url
         }
         dataList_video.push({
 
@@ -52,7 +54,7 @@ const facebookStoryDL = async function(url) {
           reaction: dataV.node.story_card_info.feedback_summary,
           story_comment_count: cmt_count,
           videos: {
-            sd: dataV.node.attachments[0].media.playable_url,
+            sd: dataV.node.attachments[0].media.browser_native_sd_url,
             hd: hd,
           }
         })
@@ -69,8 +71,8 @@ const facebookStoryDL = async function(url) {
       //var data_user = JSON.parse(user)
 
       const permalink = data.match(/"permalink_url":"(.*?)"/);
-      var nodes = data.match(/"playable_url":"(.*?)"/);
-      var match = data.match(/"playable_url_quality_hd":"(.*?)"/);
+      var nodes = data.match(/"browser_native_sd_url":"(.*?)"/);
+      var match = data.match(/"browser_native_hd_url":"(.*?)"/);
       var object = data.match(/"preferred_thumbnail":{"image":{"uri":"(.*?)"/);
 
       if (nodes && nodes[1]) {
@@ -101,37 +103,36 @@ const facebookDL = async function(url) {
   var wrap = function getValue(callbackId) {
     return JSON.parse('{"text": "' + callbackId + '"}').text;
   };
+  var datan = datas
   return new Promise(async (resolve, reject) => {
     axios.get(url, {
       headers: datas
     }).then(async function(rawResponse) {
 
       var data = rawResponse.data;
+      if(data?.match("CAALoginCometHeaderLoginForm")) {
+        data = (await axios.get(rawResponse.request.res.responseUrl, {headers: datan})).data
+        // return reject({
+        // message: "Lỗi cookie"
+      // })
+    }
       var dataNew = data.split(`,"data":{"tahoe_sidepane_renderer":`)[1].split(`},"if_viewer_can_see_woodhenge_sidepane"`)[0]
       const datas = JSON.parse(dataNew + '}')
-      // resolve(datas)
       var title = datas.video.creation_story.comet_sections.message.story.message.text
 
-      const reactions = datas.video.feedback.cannot_see_top_custom_reactions.top_reactions.edges
+      const reactions = datas.video.feedback.top_reactions.edges
       var comment_count = datas.video.feedback.total_comment_count
       var reaction_count = datas.video.feedback.reaction_count.count
       var share_count = datas.video.feedback.share_count.count
       var view_count = datas.video.feedback.video_view_count
-      console.log({
-        title,
-        comment_count,
-        reaction_count,
-        comment_count,
-        share_count,
-        view_count
-      })
+      
       const articleBody = data.match(/"articleBody":"(.*?)"/) || 'Không có';
       const permalink = data.match(/"permalink_url":"(.*?)"/);
       const duration = data.match(/"playable_duration_in_ms":(.*?),/);
-      var nodes = data.match(/"playable_url":"(.*?)"/);
-      var match = data.match(/"playable_url_quality_hd":"(.*?)"/);
+      var nodes = data.match(/"browser_native_sd_url":"(.*?)"/);
+      var match = data.match(/"browser_native_hd_url":"(.*?)"/);
       var object = data.match(/"preferred_thumbnail":{"image":{"uri":"(.*?)"/);
-
+      
       if (nodes && nodes[1]) {
         var result = {
           data: {
@@ -184,8 +185,8 @@ const facebookGrupDL = async function(url) {
       var audio = audio_video.match(/"url":"(.*?)"/);
 
       const permalink = data.match(/"permalink_url":"(.*?)"/);
-      var nodes = data.match(/"playable_url":"(.*?)"/);
-      var match = data.match(/"playable_url_quality_hd":"(.*?)"/);
+      var nodes = data.match(/"browser_native_sd_url":"(.*?)"/);
+      var match = data.match(/"browser_native_hd_url":"(.*?)"/);
       var object = data.match(/"preferred_thumbnail":{"image":{"uri":"(.*?)"/);
 
       var hd = ''
@@ -253,8 +254,8 @@ const facebookWatchDL = async function(url) {
 
       var reaction_count = datass.feedback.reaction_count.count
       const permalink = data.match(/"permalink_url":"(.*?)"/);
-      var nodes = data.match(/"playable_url":"(.*?)"/);
-      var match = data.match(/"playable_url_quality_hd":"(.*?)"/);
+      var nodes = data.match(/"browser_native_sd_url":"(.*?)"/);
+      var match = data.match(/"browser_native_hd_url":"(.*?)"/);
       var object = data.match(/"preferred_thumbnail":{"image":{"uri":"(.*?)"/);
 
       var hd = ''
@@ -323,8 +324,8 @@ const facebookReelDL = async function(url) {
       // var audio_video = data.split(`"audio":[`)[1].split(`]}],"all_video_dash_prefetch_representations"`)[0];
       // var audio = audio_video.match(/"url":"(.*?)"/);
       const permalink = data.match(/"permalink_url":"(.*?)"/);
-      var nodes = data.match(/"playable_url":"(.*?)"/);
-      var match = data.match(/"playable_url_quality_hd":"(.*?)"/);
+      var nodes = data.match(/"browser_native_sd_url":"(.*?)"/);
+      var match = data.match(/"browser_native_hd_url":"(.*?)"/);
       var object = data.match(/"preferred_thumbnail":{"image":{"uri":"(.*?)"/);
       var hd = ''
       if (match == null) {
@@ -475,7 +476,7 @@ const fbStory = async function(url) {
         }
         return resolve(data_api2)
       }
-      else if (data.includes("playable_url_quality_hd")) {
+      else if (data.includes("browser_native_hd_url")) {
         console.log('3')
         var dt_video = data.split(`,"ufi_renderer":`)[1].split(`}},"id"`)[0]
         var data_video = JSON.parse(dt_video + '}}')
@@ -494,8 +495,8 @@ const fbStory = async function(url) {
             thumbnail: video.attachment.media.preferred_thumbnail.image
           },
           videos: {
-            sd: video.attachment.media.playable_url,
-            hd: video.attachment.media.playable_url_quality_hd
+            sd: video.attachment.media.browser_native_sd_url,
+            hd: video.attachment.media.browser_native_hd_url
           },
           author: 'https://www.facebook.com/Developed.PLXT'
         };
